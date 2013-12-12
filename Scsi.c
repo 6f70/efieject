@@ -29,6 +29,7 @@ ScsiEjectAllDevices(VOID)
             NULL,
             EFI_OPEN_PROTOCOL_GET_PROTOCOL);
         if (Status != EFI_SUCCESS) {
+            gBS->FreePool(HandleBuffer);
             return Status;
         }
 
